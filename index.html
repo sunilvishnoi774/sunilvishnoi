@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta name="description" content="This is a sample business website.">
+  <meta name="keywords" content="business, website, sample">
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Sunil Vishnoi</h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Welcome to our Business Website</h2>
+      <p>We are a leading provider of business solutions.</p>
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="storyText"></div>
+      </div>
+      <img src="images/IMG_6584.jpg" alt="sunil vishnoi">
+      <img src="images/IMG_20230101_150729.jpg" alt="Image 2">
+      <img src="images/IMG_20220922_181419.jpg" alt="Image 3">
+      <img src="images/IMG_2398.JPG" alt="Image 4">
+      <img src="images/IMG_2909.JPG" alt="Image 5">
+      <img src="images/IMG_3045.JPG" alt="Image 6">
+      <img src="images/IMG_2612.JPG" alt="Image 7">
+      <img src="images/IMG_2317.JPG" alt="Image 8">
+      <img src="images/IMG_3047.JPG" alt="Image 9">
+      <img src="images/IMG_1303.jpg" alt="Image 10">
+    </section>
+  </main>
+  <footer>
+    <p>Follow us on social media:</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100010854725320" target="_blank" title="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="https://www.instagram.com/sunielvishnoi0/" target="_blank" title="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+      <!-- Add more social media icons as needed -->
+    </div>
+    <p>© 2024 Sunil Vishnoi. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('section img');
+      const modal = document.getElementById('myModal');
+      const modalImage = document.getElementById('modalImage');
+      const storyText = document.getElementById('storyText');
+      const closeBtn = document.getElementsByClassName('close')[0];
+
+      images.forEach((image) => {
+        image.addEventListener('click', function () {
+          modal.style.display = 'block';
+          modalImage.src = this.src;
+          storyText.innerHTML = "Your story text goes here. You can replace this text with the actual story related to the image.";
+        });
+      });
+
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
